@@ -14,17 +14,17 @@ public class LowerBound {
 		addNumbers(listInteger);
 		System.out.println(listInteger);
 		
-		nonChiaro();
+		listeConGenerics();
 	}
 	
 	/**
 	 *  OK. List<? extends Integer> is a subtype of List<? extends Number>
 	 * Ma Number e' una classe astratta non implementata da Integer
 	 * */
-	private static void nonChiaro() {
+	@SuppressWarnings("unused")
+	private static void listeConGenerics() {
 		List<? extends Integer> intList = new ArrayList<>();
 		List<? extends Number>  numList = intList;
-		
 	}
 
 }

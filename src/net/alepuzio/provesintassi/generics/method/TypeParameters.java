@@ -3,7 +3,7 @@ package net.alepuzio.provesintassi.generics.method;
 public class TypeParameters {
 	public static <T> int countGreaterThan(T[] anArray, T elem) {
 	    int count = 0;
-	    for (T e : anArray)
+	    for (@SuppressWarnings("unused") T e : anArray)
 //	        if (e > elem)  // compiler error
 	            ++count;
 	    return count;

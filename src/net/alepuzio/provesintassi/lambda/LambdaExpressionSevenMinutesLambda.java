@@ -1,7 +1,6 @@
 package net.alepuzio.provesintassi.lambda;
 
 import java.util.*;
-import java.util.function.Consumer;
 
 
 public class LambdaExpressionSevenMinutesLambda {
