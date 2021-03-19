@@ -8,20 +8,22 @@ import java.util.*;
  */
 public class SevenMinutesLambda {
 
-	// come da tutorial
-//	public static void main(String[] args) {
-//		List strings = Arrays.asList("Lambda ", "expressions ", "are ", "cool");
-//		for (int i = 0; i < strings.size(); i++) {
-//			System.out.print(strings.get(i));
-//		}
-//	}
-	
+	/* as is from the tutorial
+	public static void main(String[] args) {
+		List strings = Arrays.asList("Lambda ", "expressions ", "are ", "cool");
+		for (int i = 0; i < strings.size(); i++) {
+			System.out.print(strings.get(i));
+		}
+	}
+	*/
+	@SuppressWarnings("rawtypes")
 	private final List strings;
 	
 	public SevenMinutesLambda(){
 		this.strings = Arrays.asList("Lambda ", "expressions ", "are ", "cool");
 	}
 
+	@SuppressWarnings("rawtypes")
 	public List visualization() {
 		for (int i = 0; i < strings.size(); i++) {
 			System.out.print(strings.get(i));

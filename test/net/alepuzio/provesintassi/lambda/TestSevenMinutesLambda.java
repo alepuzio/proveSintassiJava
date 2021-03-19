@@ -25,6 +25,7 @@ public class TestSevenMinutesLambda {
 		System.out.println("Pronta l'istanza da testare");
 	}
 	
+	@SuppressWarnings("rawtypes")
 	@Test
 	public void testVisualization() {
 		List result = this.instance.visualization();

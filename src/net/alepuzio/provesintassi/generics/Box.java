@@ -27,17 +27,21 @@ public class Box<T> {
 
 	}
 
+	@SuppressWarnings("unchecked")
 	private static void uncheckedGenerics() {
 		Box<String> stringBox = new Box<>();
+		@SuppressWarnings("rawtypes")
 		Box rawBox = stringBox;
 		rawBox.set(8);  // warning: unchecked invocation to set(T)
 	}
-
+	
+	@SuppressWarnings({ "unused", "rawtypes", "unchecked" })
 	private static void genericsInt() {
-		Box rawBox = new Box(); // rawBox is a raw type of Box<T>
+		Box rawBox = new Box(); // rawBox is a raw type of Box<T>	
 		Box<Integer> intBox = rawBox; // warning: unchecked conversion
 	}
 
+	@SuppressWarnings({ "rawtypes", "unused" })
 	private static void genericsString() {
 		Box<String> stringBox = new Box<>();
 		Box rawBox = stringBox;               // OK

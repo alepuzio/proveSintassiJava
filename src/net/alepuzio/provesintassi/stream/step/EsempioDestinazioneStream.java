@@ -9,7 +9,7 @@ public class EsempioDestinazioneStream {
 
 	public double terminalOperationAvgSong(List<Album> albums) {
 		double avgSong = albums.stream().mapToInt(
-				album -> album.getSongs().size())/* trasformo Stream in Stream numerico*/
+				album -> album.getSongs().size())/* trasformo Stream di Album in Stream numerico*/
 				.average().getAsDouble();
 		return avgSong;
 	}
