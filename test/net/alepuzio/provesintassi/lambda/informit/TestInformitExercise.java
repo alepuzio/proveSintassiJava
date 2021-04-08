@@ -4,6 +4,8 @@
 package net.alepuzio.provesintassi.lambda.informit;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,12 +16,15 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.sun.istack.internal.logging.Logger;
+
 /**
  * @author apuzielli, from https://www.informit.com/articles/article.aspx?p=2303960&seqNum=10
  *
  */
 public class TestInformitExercise {
 
+	private Logger logger = Logger.getLogger(this.getClass());
 	/**
 	 * @throws java.lang.Exception
 	 */
@@ -60,8 +65,7 @@ public class TestInformitExercise {
 		Measurable[] measures = {new Employee("John",4d), new Employee("Smith",6d)};
 		double actual = new ListMeasurable(measures).avg();
 		final double expected = 5000.0d;
-		assertEquals(expected, actual,0.01);
-				
+		assertEquals(expected, actual,0.01);				
 	}
 
 	/**
@@ -74,7 +78,17 @@ public class TestInformitExercise {
 		String actual = ((Employee) new ListMeasurable(measures).largest()).name();
 		String expected = "Smith";
 		assertEquals(expected, actual);
-				
+	}
+
+	
+	/**
+	 * What are all the supertypes of String? Of Scanner? Of ImageOutputStream? Note that each type is its own supertype. 
+	 * A class or interface without declared supertype has supertype Object.
+	 * */
+	@Test
+	public void testThird() {
+		logger.info("Required no code");
+		assertTrue(true);
 	}
 
 }
