@@ -118,7 +118,7 @@ public class TestInformitExercise {
 	 *  N.B. I don't use static code
 	 * */
 	@Test
-	public void testSix() {
+	public void testFive() {
 		final int size = 101;
 		List<Integer> actual = new IntSequence(size).infiniteList();
 		List<Integer> expected = new ArrayList<Integer>();
