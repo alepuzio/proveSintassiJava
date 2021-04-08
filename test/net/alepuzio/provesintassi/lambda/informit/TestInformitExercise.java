@@ -6,20 +6,19 @@ package net.alepuzio.provesintassi.lambda.informit;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.logging.Level;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.sun.istack.internal.logging.Logger;
 
 /**
  * @author apuzielli, from https://www.informit.com/articles/article.aspx?p=2303960&seqNum=10
@@ -37,7 +36,7 @@ public class TestInformitExercise {
 
 	@Before
 	public void setUp() throws Exception {
-		logger.setLevel(Level.FINEST);
+		logger.setLevel(Level.DEBUG);
 	}
 
 	@After
@@ -108,23 +107,6 @@ public class TestInformitExercise {
 		assertEquals(expected,  actual);
 	}
 
-	/**
-	 * In this exercise, you will try out what happens when a method is added to an interface. 
-	 * In Java 7, implement a class DigitSequence that implements Iterator<Integer>, not IntSequence. 
-	 * Provide methods hasNext, next, and a do-nothing remove.
-	 * Write a program that prints the elements of an instance. 
-	 * In Java 8, the Iterator class gained another method, forEachRemaining.
-	 *  Does your code still compile when you switch to Java 8? 
-	 *  If you put your Java 7 class in a JAR file and don’t recompile, does it work in Java 8? 
-	 *  What if you call the forEachRemaining method? 
-	 *  Also, the remove method has become a default method in Java 8, throwing an UnsupportedOperationException. 
-	 * What happens when remove is called on an instance of your class?
-	 * */
-	@Test
-	public void testSix(){
-		logger.warning("Secondary: difference between Java 7 and 8");
-		assertTrue(true);
-	}
 	
 	/**
 	 * Implement the method 
@@ -149,24 +131,5 @@ public class TestInformitExercise {
 		assertEquals(expectedOrder[5],  actual.get(5));		
 	} 
 	
-	
-	/**
-	 * Using the listFiles(FileFilter) and isDirectory methods of the java.io.File class,
-	 *  write a method that returns all subdirectories of a given directory. 
-	 *  Use a lambda expression instead of a FileFilter object. 
-	 *  Repeat with a method expression and an anonymous inner class.
-	 * */
-	@Test
-	public void testTenth(){
-		File directory = new File(".\\documentation\\");
-		VerifySubDir verifySubDir = new VerifySubDir(directory);
-		File[] expected = verifySubDir.oldMode();
-		File[] actual = verifySubDir.newMode();
-		for ( int i = 0 ; i < expected.length; i++){
-			logger.info(String.format("count [%s] ..", expected[i].getName()));
-			assertEquals(expected[i], actual[i]);
-		}
-	}	
+
 }
-
-

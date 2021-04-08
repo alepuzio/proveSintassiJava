@@ -2,15 +2,14 @@ package net.alepuzio.provesintassi.lambda.informit;
 
 import static org.junit.Assert.assertTrue;
 
-import java.util.logging.Level;
-
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.sun.istack.internal.logging.Logger;
 
 public class TestThread {
 	/**
@@ -18,7 +17,7 @@ public class TestThread {
 	 * */
 	@Test
 	public void testEighth(){
-		logger.warning("Secondary: thread");
+		logger.warn("Secondary: thread");
 		assertTrue(true);
 	}	
 	/**
@@ -30,7 +29,7 @@ public class TestThread {
 	 * */
 	@Test
 	public void testNinth(){
-		logger.warning("Secondary: thread");
+		logger.warn("Secondary: thread");
 		assertTrue(true);
 	}
 	
@@ -44,7 +43,7 @@ public class TestThread {
 
 	@Before
 	public void setUp() throws Exception {
-		logger.setLevel(Level.FINEST);
+		logger.setLevel(Level.DEBUG);
 	}
 
 	@After
