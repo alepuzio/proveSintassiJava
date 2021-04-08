@@ -56,11 +56,24 @@ public class TestInformitExercise {
 	 *  Use it to compute the average salary of an array of employees.
 	 * */
 	
-	public void testOne() {
+	public void testFirst() {
 		Measurable[] measures = {new Employee("John",4d), new Employee("Smith",6d)};
 		double actual = new ListMeasurable(measures).avg();
 		final double expected = 5000.0d;
 		assertEquals(expected, actual,0.01);
+				
+	}
+
+	/**
+	 * Continue with the preceding exercise and provide a method Measurable largest(Measurable[] objects). 
+	 * Use it to find the name of the employee with the largest salary. 
+	 * Why do you need a cast?*/
+	@Test
+	public void testSecond() {
+		Measurable[] measures = {new Employee("John",4d), new Employee("Smith",6d)};
+		String actual = ((Employee) new ListMeasurable(measures).largest()).name();
+		String expected = "Smith";
+		assertEquals(expected, actual);
 				
 	}
 
