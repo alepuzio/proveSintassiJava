@@ -7,11 +7,11 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
-import java.io.FileFilter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.logging.Level;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -33,6 +33,7 @@ public class TestInformitExercise {
 	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		
 	}
 
 	/**
@@ -47,6 +48,8 @@ public class TestInformitExercise {
 	 */
 	@Before
 	public void setUp() throws Exception {
+		logger.setLevel(Level.FINEST);
+		
 	}
 
 	/**
@@ -203,12 +206,9 @@ public class TestInformitExercise {
 	@Test
 	public void testTenth(){
 		File directory = new File(".\\documentation\\");
-		File[] expected = directory.listFiles(new FileFilter() {
-			@Override
-			public boolean accept(File pathname) {
-				return pathname.isDirectory();
-		}});
-		File[] actual = directory.listFiles( a -> a.isDirectory());
+		VerifySubDir verifySubDir = new VerifySubDir(directory);
+		File[] expected = verifySubDir.oldMode();
+		File[] actual = verifySubDir.newMode();
 		for ( int i = 0 ; i < expected.length; i++){
 			logger.info(String.format("count [%s] ..", expected[i].getName()));
 			assertEquals(expected[i], actual[i]);
