@@ -144,7 +144,7 @@ public class TestInformitExercise {
 	 * */
 	@Test
 	public void testSix(){
-		logger.info("Secondary");
+		logger.warning("Secondary: difference between Java 7 and 8");
 		assertTrue(true);
 	}
 	
@@ -170,5 +170,23 @@ public class TestInformitExercise {
 		assertEquals(expectedOrder[4],  actual.get(4));
 		assertEquals(expectedOrder[5],  actual.get(5));		
 	} 
+	
+	/**
+	 * 
+	 * */
+	@Test
+	public void testEighth(){
+		logger.warning("Secondary: thread");
+		assertTrue(true);
+	}	
+	/**
+	 * 
+	 * */
+	@Test
+	public void testNinth(){
+		logger.warning("Secondary: thread");
+		assertTrue(true);
+	}	
 }
+
 
