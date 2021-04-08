@@ -111,5 +111,22 @@ public class TestInformitExercise {
 		assertEquals(expected,  actual);
 	}
 
+	/**
+	 * Implement a static constant method of the IntSequence class that yields an infinite constant sequence. 
+	 * For example, IntSequence.constant(1) yields values 1 1 1 . . . , ad infinitum.
+	 *  Extra credit if you do this with a lambda expression.
+	 *  N.B. I don't use static code
+	 * */
+	@Test
+	public void testSix() {
+		final int size = 101;
+		List<Integer> actual = new IntSequence(size).infiniteList();
+		List<Integer> expected = new ArrayList<Integer>();
+		for(int i = 0; i < size; i++){
+			expected.add(i);
+		}
+		assertEquals(expected,  actual);
+	}
+
 	
 }
