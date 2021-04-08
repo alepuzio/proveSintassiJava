@@ -1,0 +1,54 @@
+package net.alepuzio.provesintassi.lambda.informit;
+
+import static org.junit.Assert.assertTrue;
+
+import java.util.logging.Level;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import com.sun.istack.internal.logging.Logger;
+
+public class TestThread {
+	/**
+	 * Implement a class Greeter that implements Runnable and whose run method prints n copies of "Hello, " + target, where n and target are set in the constructor. Construct two instances with different messages and execute them concurrently in two threads.
+	 * */
+	@Test
+	public void testEighth(){
+		logger.warning("Secondary: thread");
+		assertTrue(true);
+	}	
+	/**
+	 * Implement methods
+	 * public static void runTogether(Runnable... tasks)
+	 * public static void runInOrder(Runnable... tasks)
+	 * The first method should run each task in a separate thread and then return. 
+	 * The second method should run all methods in the current thread and return when the last one has completed.
+	 * */
+	@Test
+	public void testNinth(){
+		logger.warning("Secondary: thread");
+		assertTrue(true);
+	}
+	
+	private Logger logger = Logger.getLogger(this.getClass());
+
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {	}
+
+	@Before
+	public void setUp() throws Exception {
+		logger.setLevel(Level.FINEST);
+	}
+
+	@After
+	public void tearDown() throws Exception { }
+
+
+}

@@ -28,36 +28,20 @@ import com.sun.istack.internal.logging.Logger;
 public class TestInformitExercise {
 
 	private Logger logger = Logger.getLogger(this.getClass());
-	/**
-	 * @throws java.lang.Exception
-	 */
+
 	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-		
-	}
+	public static void setUpBeforeClass() throws Exception {	}
 
-	/**
-	 * @throws java.lang.Exception
-	 */
 	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
+	public static void tearDownAfterClass() throws Exception {	}
 
-	/**
-	 * @throws java.lang.Exception
-	 */
 	@Before
 	public void setUp() throws Exception {
 		logger.setLevel(Level.FINEST);
-		
 	}
 
-	/**
-	 * @throws java.lang.Exception
-	 */
 	@After
-	public void tearDown() throws Exception {
-	}
+	public void tearDown() throws Exception { }
 
 	@Test
 	/**
@@ -65,8 +49,7 @@ public class TestInformitExercise {
 	 *  Make Employee implement Measurable. 
 	 *  Provide a method double average(Measurable[] objects) that computes the average measure. 
 	 *  Use it to compute the average salary of an array of employees.
-	 * */
-	
+	 * */	
 	public void testFirst() {
 		Measurable[] measures = {new Employee("John",4d), new Employee("Smith",6d)};
 		double actual = new ListMeasurable(measures).avg();
@@ -87,15 +70,6 @@ public class TestInformitExercise {
 	}
 
 	
-	/**
-	 * What are all the supertypes of String? Of Scanner? Of ImageOutputStream? Note that each type is its own supertype. 
-	 * A class or interface without declared supertype has supertype Object.
-	 * */
-	@Test
-	public void testThird() {
-		logger.info("Required no code");
-		assertTrue(true);
-	}
 
 	/**
 	 * Implement a static of method of the IntSequence class that yields a sequence with the arguments.
@@ -174,27 +148,6 @@ public class TestInformitExercise {
 		assertEquals(expectedOrder[4],  actual.get(4));
 		assertEquals(expectedOrder[5],  actual.get(5));		
 	} 
-	
-	/**
-	 * Implement a class Greeter that implements Runnable and whose run method prints n copies of "Hello, " + target, where n and target are set in the constructor. Construct two instances with different messages and execute them concurrently in two threads.
-	 * */
-	@Test
-	public void testEighth(){
-		logger.warning("Secondary: thread");
-		assertTrue(true);
-	}	
-	/**
-	 * Implement methods
-	 * public static void runTogether(Runnable... tasks)
-	 * public static void runInOrder(Runnable... tasks)
-	 * The first method should run each task in a separate thread and then return. 
-	 * The second method should run all methods in the current thread and return when the last one has completed.
-	 * */
-	@Test
-	public void testNinth(){
-		logger.warning("Secondary: thread");
-		assertTrue(true);
-	}
 	
 	
 	/**
