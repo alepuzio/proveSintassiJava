@@ -5,9 +5,9 @@ package net.alepuzio.provesintassi.lambda.informit;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import org.junit.After;
@@ -91,4 +91,25 @@ public class TestInformitExercise {
 		assertTrue(true);
 	}
 
+	/**
+	 * Implement a static of method of the IntSequence class that yields a sequence with the arguments.
+	 * For example, IntSequence.of(3, 1, 4, 1, 5, 9) yields a sequence with six values.
+	 * Extra credit if you return an instance of an anonymous inner class.
+	 * NB: I don't use static in my code, different
+	 * */
+	@Test
+	public void testFourth() {
+		int one = 3, two = 1, three = 4, four = 4, five = 5 , six = 9;
+		List<Integer> actual = new IntSequence(one, two, three, four, five, six).list();
+		List<Integer> expected = new ArrayList<Integer>();
+		expected.add(one);
+		expected.add(two);
+		expected.add(three);
+		expected.add(four);
+		expected.add(five);
+		expected.add(six);
+		assertEquals(expected,  actual);
+	}
+
+	
 }
