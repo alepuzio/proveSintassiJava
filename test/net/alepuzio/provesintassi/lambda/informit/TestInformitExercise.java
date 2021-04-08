@@ -7,7 +7,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
-
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import org.junit.After;
@@ -146,6 +148,27 @@ public class TestInformitExercise {
 		assertTrue(true);
 	}
 	
-	
+	/**
+	 * Implement the method 
+	 * <i>void luckySort(ArrayList<String> strings, Comparator<String> comp)</i> 
+	 * that keeps calling Collections.shuffle on the array list until the elements are in increasing order,
+	 *  as determined by the comparator.
+	 * */
+	@Test
+	public void testSeven(){
+		final String[] expectedOrder = {"a", "b", "c", "d", "e", "f", "z"};
+		String[] toModify = {expectedOrder[0], expectedOrder[1], expectedOrder[2], expectedOrder[3], expectedOrder[4], expectedOrder[5]};
+
+		final List<String> input = Arrays.asList(toModify);
+		Collections.shuffle(input);
+		
+		final List<String> actual = new StringSequence(input).luckySort( (a,b)-> a.compareTo(b)	 );
+		assertEquals(expectedOrder[0],  actual.get(0));
+		assertEquals(expectedOrder[1],  actual.get(1));
+		assertEquals(expectedOrder[2],  actual.get(2));
+		assertEquals(expectedOrder[3],  actual.get(3));
+		assertEquals(expectedOrder[4],  actual.get(4));
+		assertEquals(expectedOrder[5],  actual.get(5));		
+	} 
 }
 
