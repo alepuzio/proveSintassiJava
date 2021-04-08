@@ -6,10 +6,11 @@ package net.alepuzio.provesintassi.lambda.informit;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.io.File;
+import java.io.FileFilter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 import org.junit.After;
@@ -172,7 +173,7 @@ public class TestInformitExercise {
 	} 
 	
 	/**
-	 * 
+	 * Implement a class Greeter that implements Runnable and whose run method prints n copies of "Hello, " + target, where n and target are set in the constructor. Construct two instances with different messages and execute them concurrently in two threads.
 	 * */
 	@Test
 	public void testEighth(){
@@ -180,12 +181,38 @@ public class TestInformitExercise {
 		assertTrue(true);
 	}	
 	/**
-	 * 
+	 * Implement methods
+	 * public static void runTogether(Runnable... tasks)
+	 * public static void runInOrder(Runnable... tasks)
+	 * The first method should run each task in a separate thread and then return. 
+	 * The second method should run all methods in the current thread and return when the last one has completed.
 	 * */
 	@Test
 	public void testNinth(){
 		logger.warning("Secondary: thread");
 		assertTrue(true);
+	}
+	
+	
+	/**
+	 * Using the listFiles(FileFilter) and isDirectory methods of the java.io.File class,
+	 *  write a method that returns all subdirectories of a given directory. 
+	 *  Use a lambda expression instead of a FileFilter object. 
+	 *  Repeat with a method expression and an anonymous inner class.
+	 * */
+	@Test
+	public void testTenth(){
+		File directory = new File(".\\documentation\\");
+		File[] expected = directory.listFiles(new FileFilter() {
+			@Override
+			public boolean accept(File pathname) {
+				return pathname.isDirectory();
+		}});
+		File[] actual = directory.listFiles( a -> a.isDirectory());
+		for ( int i = 0 ; i < expected.length; i++){
+			logger.info(String.format("count [%s] ..", expected[i].getName()));
+			assertEquals(expected[i], actual[i]);
+		}
 	}	
 }
 
