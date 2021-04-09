@@ -11,7 +11,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-
+/**
+ * @author apuzielli, from https://www.informit.com/articles/article.aspx?p=2303960&seqNum=10
+ */
 public class TestDifferenceJavaVersion {
 
 	private Logger logger = Logger.getLogger(this.getClass());
