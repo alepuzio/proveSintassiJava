@@ -18,7 +18,7 @@ public class TestFileSystem {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-        PropertyConfigurator.configure("log4j.properties");
+	    PropertyConfigurator.configure(".\\log4j.properties");
 	}
 
 	@AfterClass
@@ -79,7 +79,6 @@ public class TestFileSystem {
 				new File(".\\src\\net\\alepuzio\\provesintassi\\lambda\\informit\\Measurables.java") };
 
 		final File[] expected = { arrayFiles[2], arrayFiles[0], arrayFiles[1] };
-		logger.info(new File(".\\").getAbsolutePath());
 		final File[] actual = new SortFiles(arrayFiles).files();
 		for (int i = 0; i < expected.length; i++) {
 			logger.info(String.format("%s == %s", expected[i], actual[i]));
