@@ -7,6 +7,7 @@ import net.alepuzio.provesintassi.stream.Album;
 
 public class EsempioIntermediateOperation {
 
+	@SuppressWarnings("rawtypes")
 	public Stream intermediateOperation(List<Album> albums) {
 		/* una volta che uso uno stream non posso piu' utilizzarlo di nuovo */
 		Stream<Album> stream1 = albums.stream();

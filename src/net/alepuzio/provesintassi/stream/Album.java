@@ -1,16 +1,8 @@
 package net.alepuzio.provesintassi.stream;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
-import java.util.Random;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * 
@@ -46,6 +38,7 @@ public class Album {
 		return title;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public List inizializeList() {
 		List<Album> albums = new ArrayList<>();
 		albums.add(new Album("Pink Floyd", "The Division Bell", 1994, "Cluster One", "What Do You Want from Me",
