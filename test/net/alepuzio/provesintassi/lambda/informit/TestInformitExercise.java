@@ -4,6 +4,7 @@
 package net.alepuzio.provesintassi.lambda.informit;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -151,5 +152,16 @@ public class TestInformitExercise {
 		List<Employee> expectedAscentingOrder = Arrays.asList(finalListAscentingOrder);
 		assertEquals(expectedAscentingOrder, actualAscentingOrder);
 
+	}
+	
+	/**
+	 * Implement the RandomSequence in Section 3.9.1, “Local Classes,” on p. 122 as a nested class,
+	 *  outside the randomInts method.
+	 * 
+	 * */
+	@Test
+	public void testFiftheen(){
+		logger.warn("Unclear requirement");
+		assertTrue(true);
 	}
 }
