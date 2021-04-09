@@ -4,9 +4,8 @@ import static org.junit.Assert.assertEquals;
 
 import java.io.File;
 
-import org.apache.log4j.ConsoleAppender;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -14,15 +13,12 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class TestFileSystem {
+	
 	private static Logger logger = Logger.getLogger(net.alepuzio.provesintassi.lambda.informit.TestFileSystem.class);
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		logger.setLevel(Level.INFO);
-		ConsoleAppender appender = new ConsoleAppender();
-		appender.setTarget("System.out");
-		appender.setName("log.log");
-		logger.addAppender(appender);
+        PropertyConfigurator.configure("log4j.properties");
 	}
 
 	@AfterClass
