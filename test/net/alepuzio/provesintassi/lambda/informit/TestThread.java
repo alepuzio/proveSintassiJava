@@ -35,7 +35,16 @@ public class TestThread {
 		logger.warn("Secondary: thread");
 		assertTrue(true);
 	}
-	
+	/**
+	 * Write a method that takes an array of Runnable instances 
+	 * and returns a Runnable whose run method executes them in order. 
+	 * Return a lambda expression
+	 * */
+	@Test
+	public void testThirteen(){
+		logger.warn("Secondary: thread");
+		assertTrue(true);
+	}
 	private Logger logger = Logger.getLogger(this.getClass());
 
 	@BeforeClass
