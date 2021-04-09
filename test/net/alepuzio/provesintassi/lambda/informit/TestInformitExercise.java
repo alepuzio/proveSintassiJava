@@ -17,6 +17,7 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 
@@ -132,5 +133,23 @@ public class TestInformitExercise {
 		assertEquals(expectedOrder[5],  actual.get(5));		
 	} 
 	
+	/**
+	 * Write a call to Arrays.sort that sorts employees by salary, breaking ties by name.
+	 *  Use Comparator.thenComparing. Then do this in reverse order.
+	 * */
+	@Test
+	@Ignore (value = "error java.lang.NoSuchMethodError: net.alepuzio.provesintassi.lambda.informit.ListEmployee.sortBySalary()Ljava/util/List;\\n	at net.alepuzio.provesintassi.lambda.informit.TestInformitExercise.testFourtheen(TestInformitExercise.java:142)")
+	public void testFourtheen(){
+		Employee[] measures = {new Employee("John",4d), new Employee("Smith",6d), new Employee("Anthony",6d)};
+		List<Employee> actualDescentingOrder = new DescentingSalary ( new ListEmployee(measures) ).execute();
+		Employee[] finalListDescentingOrder = {new Employee("Anthony",6d), new Employee("Smith",6d), new Employee("John",4d)};
+		List<Employee> expectedDescentingOrder = Arrays.asList(finalListDescentingOrder);
+		assertEquals(expectedDescentingOrder, actualDescentingOrder);
 
+		List<Employee> actualAscentingOrder = new AscendingSalary( new ListEmployee(measures) ).execute();
+		Employee[] finalListAscentingOrder = {new Employee("John",4d), new Employee("Smith",6d),new Employee("Anthony",6d)};
+		List<Employee> expectedAscentingOrder = Arrays.asList(finalListAscentingOrder);
+		assertEquals(expectedAscentingOrder, actualAscentingOrder);
+
+	}
 }
