@@ -4,6 +4,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -36,7 +37,9 @@ public class TestThread {
 	private Logger logger = Logger.getLogger(this.getClass());
 
 	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {	}
+	public static void setUpBeforeClass() throws Exception {
+	    PropertyConfigurator.configure(".\\log4j.properties");
+	}
 
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {	}

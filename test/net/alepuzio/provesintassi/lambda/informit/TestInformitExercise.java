@@ -4,7 +4,6 @@
 package net.alepuzio.provesintassi.lambda.informit;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,6 +12,7 @@ import java.util.List;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -29,7 +29,9 @@ public class TestInformitExercise {
 	private Logger logger = Logger.getLogger(this.getClass());
 
 	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {	}
+	public static void setUpBeforeClass() throws Exception {
+	    PropertyConfigurator.configure(".\\log4j.properties");
+	}
 
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {	}
